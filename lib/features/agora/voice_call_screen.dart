@@ -1,50 +1,48 @@
 
-import 'package:flutter/material.dart';
 import 'package:agora_uikit/agora_uikit.dart';
-import 'package:agora_app/agora_config.dart';
+import 'package:flutter/material.dart';
 
-class VideoCallPage extends StatefulWidget {
-  const VideoCallPage({super.key});
+class VoiceCallScreen extends StatefulWidget {
+  const VoiceCallScreen({super.key});
 
   @override
-  State<VideoCallPage> createState() => _VideoCallPageState();
+  State<VoiceCallScreen> createState() => _VoiceCallScreenState();
 }
 
-class _VideoCallPageState extends State<VideoCallPage> {
+class _VoiceCallScreenState extends State<VoiceCallScreen> {
   final AgoraClient client = AgoraClient(
     agoraConnectionData: AgoraConnectionData(
-      appId: AgoraConfig.appId,
-      channelName: AgoraConfig.channelName,
-      tempToken: AgoraConfig.token,
+      appId: 'e5f29915569448139e8020a531405b8a',
+      channelName: 'test',
     ),
+    enabledPermission: [
+      Permission.microphone,
+    ],
   );
 
   @override
   void initState() {
     super.initState();
-    initAgora();
-  }
-
-  void initAgora() async {
-    await client.initialize();
+    client.initialize();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Video Call'),
-      ),
       body: SafeArea(
         child: Stack(
           children: [
             AgoraVideoViewer(
               client: client,
               layoutType: Layout.floating,
-              enableHostControls: true, 
+              showNumberOfUsers: true,
             ),
             AgoraVideoButtons(
               client: client,
+              enabledButtons: const [
+                BuiltInButtons.toggleMic,
+                BuiltInButtons.callEnd,
+              ],
             ),
           ],
         ),

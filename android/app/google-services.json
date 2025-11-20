@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "601870044740",
+    "project_id": "talknearn-a590f",
+    "storage_bucket": "talknearn-a590f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601870044740:android:8301402a36c63886233611",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4OXj5p2BCkTz6NKEgihvSXO97BS6Cn4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
