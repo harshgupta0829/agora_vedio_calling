@@ -22,7 +22,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // TODO: Replace with your Agora App ID
-  final client = await AgoraRtmClient.createInstance('4044d4c4028c42c584bf4dbde359e7da');
+  final client = await AgoraRtmClient.createInstance('"Agora app Id"');
   runApp(MyApp(client: client));
 }
 
